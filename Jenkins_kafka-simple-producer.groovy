@@ -29,7 +29,7 @@ pipeline {
         stage('Sending Messages') {	
             steps {
 			    sh '''
-				for item in {1..10} ; do echo -e \"\nSending Message to the provider kafka cluster\" ; /opt/GO_kafka-simple-producer_linux "${Broker_Nodes}" -topic "${TOPIC}" -value "Testing connection from Jenkins" ; done
+				for item in {1..10} ; do echo -e \"\nSending Message to the provider kafka cluster\" ; /opt/GO_kafka-simple-producer_linux -brokers "${Broker_Nodes}" -topic "${TOPIC}" -value "Testing connection from Jenkins" ; done
 				'''	
                 }
             }
