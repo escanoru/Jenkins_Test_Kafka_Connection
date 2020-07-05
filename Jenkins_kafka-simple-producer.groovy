@@ -30,7 +30,7 @@ pipeline {
             steps {
 			    sh '''
 				for item in {1..10} ; do echo -e \"\nSending Message to the provider kafka cluster\" ; /opt/GO_kafka-simple-producer_linux -brokers "${Kafka_Brokers_PORT}" -topic "${TOPIC}" -value "Testing connection from Jenkins" ; done
-				echo -e "\n\nKafka cluster is up \n\n" > /dev/null
+				echo -e "\n\n\nKafka cluster is up \n\n\n" > /dev/null
 				'''	
                 }
             }
