@@ -42,4 +42,3 @@ pipeline {
             deleteDir()
         }
 	}
-}
