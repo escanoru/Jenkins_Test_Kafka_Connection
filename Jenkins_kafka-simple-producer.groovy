@@ -1,6 +1,6 @@
 def setDescription() {
   def item = Jenkins.instance.getItemByFullName(env.JOB_NAME) 
-  item.setDescription("<h2 style=\"color:#138D75 \">Job to 10 messages to test if a given kafka cluter is available</h2>") 
+  item.setDescription("<h2 style=\"color:#138D75\">Job to send 10 messages to test if a given kafka cluter is available</h2>") 
   item.save()
   }
 setDescription()
@@ -16,12 +16,12 @@ pipeline {
         string(
 		name: 'Kafka_Brokers_PORT',
 		defaultValue: '15.214.',
-		description: '<h4>HOST:PORT separated by comma, e.g 10.0.0.2:9092, 10.0.0.3:9092, 10.0.0.4:9092, 10.0.0.5:9092</h4>'
+		description: '<h4 style=\"color:#117864\">HOST:PORT separated by comma, e.g 10.0.0.2:9092, 10.0.0.3:9092, 10.0.0.4:9092, 10.0.0.5:9092</h4>'
 		)
         string(
 		name: 'TOPIC',
 		defaultValue: 'EVENTS_FROM_JENKINS',
-		description: '<h4>Target topic. By default the job will create he the topic \"EVENTS_FROM_JENKINS\" and then send the events.</h4>'
+		description: '<h4 style=\"color:#117864\">Target topic. By default the job will create he the topic \"EVENTS_FROM_JENKINS\" and then send the events.</h4>'
 		)
   }
 	
