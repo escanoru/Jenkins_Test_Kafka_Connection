@@ -23,10 +23,10 @@ pipeline {
 		defaultValue: 'EVENTS_FROM_JENKINS',
 		description: '<h4>Target topic. By default the job will create he the topic \"EVENTS_FROM_JENKINS\" and then send the events.</h4>'
 		)
-  }		
+  }
 	
-    stages {		
-        stage('Sending Messages') {	
+    stages {
+        stage('Sending Messages') {
             steps {
 			    sh '''
 				for item in {1..10} ; do echo -e \"\nSending Message to the provider kafka cluster\" ; /opt/GO_kafka-simple-producer_linux -brokers "${Kafka_Brokers_PORT}" -topic "${TOPIC}" -value "Testing connection from Jenkins" ; done
@@ -34,11 +34,12 @@ pipeline {
                 }
             }
         }
-    }
 	
-    post {
-        always {
-            echo 'Clenning up the workspace'
-            deleteDir()
-        }
-	}
+  post {
+      always {
+          echo 'Clenning up the workspace'
+          deleteDir()
+      }
+  }
+  
+}
