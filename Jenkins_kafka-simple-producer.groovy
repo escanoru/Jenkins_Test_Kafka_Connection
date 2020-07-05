@@ -1,6 +1,6 @@
 def setDescription() {
   def item = Jenkins.instance.getItemByFullName(env.JOB_NAME) 
-  item.setDescription("<h2 style=\"color:#138D75\">Job to test the connection to a given kafka cluter, 10 messages will be sent, if the 1st message fails can't be send then the job will fail.</h2>") 
+  item.setDescription("<h2 style=\"color:#138D75\">Job to test the connection to a given kafka cluter, 10 messages will be sent, if the 1st message fails to be delivered then the job will fail.</h2>") 
   item.save()
   }
 setDescription()
