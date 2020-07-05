@@ -21,7 +21,7 @@ pipeline {
         string(
 		name: 'TOPIC',
 		defaultValue: 'EVENTS_FROM_JENKINS',
-		description: '<h4>Target topic. By default the job will create he the topic 'EVENTS_FROM_JENKINS' and then send the events.</h4>'
+		description: '<h4>Target topic. By default the job will create he the topic \"EVENTS_FROM_JENKINS\" and then send the events.</h4>'
 		)
   }		
 	
