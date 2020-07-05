@@ -14,7 +14,7 @@ pipeline {
 		}
   parameters {
         string(
-		name: 'Kafka_Brokers_PORT',
+		name: 'Kafka_Brokers:PORT',
 		defaultValue: '15.214.',
 		description: '<h4 style=\"color:#117864\">HOST:PORT separated by comma, e.g 10.0.0.2:9092, 10.0.0.3:9092, 10.0.0.4:9092, 10.0.0.5:9092</h4>'
 		)
@@ -29,7 +29,7 @@ pipeline {
         stage('Sending Messages') {
             steps {
 			    sh '''
-				for item in {1..10} ; do echo -e \"\nSending Message to the provider kafka cluster\" ; /opt/GO_kafka-simple-producer_linux -brokers "${Kafka_Brokers_PORT}" -topic "${TOPIC}" -value "Testing connection from Jenkins" ; done
+				for item in {1..10} ; do echo -e \"\nSending Message to the provider kafka cluster\" ; /opt/GO_kafka-simple-producer_linux -brokers "${Kafka_Brokers:PORT}" -topic "${TOPIC}" -value "Testing connection from Jenkins" ; done
 				echo -e "\n\n\nKafka cluster is up \n\n\n" > /dev/null
 				'''	
                 }
