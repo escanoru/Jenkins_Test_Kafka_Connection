@@ -20,8 +20,8 @@ pipeline {
 		)
         string(
 		name: 'TOPIC',
-		defaultValue: 'EVENTS_FROM_JENKINS',
-		description: '<h4 style=\"color:#117864\">Target topic name. By default the job will create a topic named \"EVENTS_FROM_JENKINS\" to send the events.</h4>'
+		defaultValue: 'th-cef',
+		description: '<h4 style=\"color:#117864\">Target topic name.</h4>'
 		)
   }
 	
