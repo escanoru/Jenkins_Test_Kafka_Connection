@@ -20,7 +20,7 @@ pipeline {
 		)
         string(
 		name: 'TOPIC',
-		defaultValue: 'th-cef',
+		defaultValue: 'FROM_JENKINS',
 		description: '<h4 style=\"color:#117864\">Target topic name.</h4>'
 		)
   }
